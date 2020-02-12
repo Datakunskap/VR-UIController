@@ -78,31 +78,22 @@ namespace OTHStudios
 
         protected override void ApprovedOnTriggerEnter(Collider other)
         {
-            if (other.tag == "Grabbable")
-            {
-                base.ApprovedOnTriggerEnter(other);
-                _inputEvents.openMenu.Invoke();
-                isActive = true;
-            }
+            base.ApprovedOnTriggerEnter(other);
+            _inputEvents.openMenu.Invoke();
+            isActive = true;
         }
 
         protected override void ApprovedOnTriggerStay(Collider other)
-        {
-            if (other.tag == "Grabbable")
-            {
-                base.ApprovedOnTriggerEnter(other);
-                isActive = true;
-            }
+        {    
+            base.ApprovedOnTriggerEnter(other);
+            isActive = true;
         }
 
         protected override void ApprovedOnTriggerExit(Collider other)
         {
-            if (other.tag == "Grabbable")
-            {
-                base.ApprovedOnTriggerExit(other);
-                _inputEvents.closeMenu.Invoke();
-                isActive = false;
-            }
+            base.ApprovedOnTriggerExit(other);
+            _inputEvents.closeMenu.Invoke();
+            isActive = false;
         }
 
         protected virtual void LockTwistRightAnim()
